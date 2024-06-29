@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos App Fetch</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <h1 class="page-title">Posts</h1>
+
+    <dialog data-user-detail-dialog></dialog>
+    <dialog data-comment-detail-dialog></dialog>
+
+    <main class="main-container" data-posts></main>
+
+    <template data-post-card>
+      <div class="post-card">
+        <h4>
+          sunt aut facere repellat provident occaecati excepturi optio
+          reprehenderit
+        </h4>
+        <p>
+          quia et suscipit\nsuscipit recusandae consequuntur expedita et
+          cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem
+          sunt rem eveniet architecto
+        </p>
+        <div class="post-card-alt">
+          <span class="user-placeholder">
+            <img src="assets/img/icons/user.svg" alt="" />
+          </span>
+          <button class="post-comments">
+            <img src="assets/img/icons/comments.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <template data-user-detail>
+      <div class="user-detail">
+        <div class="user-info">
+          <span class="user-detail-head"><strong>User Info</strong></span>
+          <span data-full-name>Leanne Graham</span>
+          <span data-username>Bret</span>
+          <span data-user-email>Sincere@april.biz</span>
+          <span data-user-phone
+            ><strong>phone:</strong> 1-770-736-8031 x56442</span
+          >
+          <span data-user-website><strong>website:</strong>hildegard.org</span>
+        </div>
+
+        <address class="user-address">
+          <span class="user-detail-head"><strong>address</strong></span>
+          <span data-user-street><strong>street:</strong> Kulas Light</span>
+          <span data-user-suite><strong>suite:</strong> Apt. 556</span>
+          <span data-user-city><strong>city:</strong> Gwenborough</span>
+          <span data-user-zipcode><strong>zipcode:</strong> 92998-3874</span>
+
+          <span class="user-detail-head"><strong>geo</strong></span>
+          <span data-user-lat><strong>lat:</strong> -37.3159</span>
+          <span data-user-lng><strong>lng:</strong> 81.1496</span>
+        </address>
+
+        <div class="user-extra-info">
+          <span class="user-detail-head"><strong>company</strong></span>
+          <span data-user-company-name
+            ><strong>name:</strong> Romaguera-Crona</span
+          >
+          <span data-user-company-catch
+            ><strong>catchPhrase:</strong> Multi-layered client-server
+            neural-net</span
+          >
+          <span data-user-company-bs
+            ><strong>bs:</strong> harness real-time e-markets</span
+          >
+        </div>
+      </div>
+    </template>
+
+    <template data-comment-detail>
+      <div class="comment-detail">
+        <span data-comment-post-name
+          ><strong class="comment-detail-head"></strong> quo vero reiciendis
+          velit similique earum</span
+        >
+        <span data-comment-email
+          ><strong class="comment-detail-head"></strong>
+          Jayne_Kuhic@sydney.com</span
+        >
+        <span data-comment-comment
+          ><strong class="comment-detail-head"></strong> est natus enim nihil
+          est dolore omnis voluptatem numquam\net omnis occaecati quod ullam
+          at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem
+          reiciendis et</span
+        >
+      </div>
+    </template>
+  </body>
+</html>

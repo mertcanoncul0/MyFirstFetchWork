@@ -1,0 +1,159 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+*:not(dialog) {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+/* General Settings */
+body {
+    font-family: Arial, cursive;
+    font-size: 1rem;
+}
+
+.page-title {
+    font-size: calc(2vw + 2rem);
+    text-align: center;
+    margin-bottom: 1em;
+    color: rgba(0, 0, 0, 1);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.main-container {
+    max-width: 1280px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+}
+
+.post-card {
+    display: grid;
+    gap: 1em;
+    font-size: 0.9rem;
+}
+
+.post-card h4 {
+    font-size: 1.3rem;
+}
+
+.post-card-alt {
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    padding-block: 0.7em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.post-card-alt img{
+    width: 24px;
+    cursor: pointer;
+    transition: transform 200ms ease-in-out;
+}
+
+.post-card-alt img:hover {
+  transform: scale(1.1);
+}
+
+dialog {
+  padding: 2rem;
+  background: white;
+  padding-top: 2rem;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+  animation: fadeShow 600ms ease-out;
+}
+
+dialog::backdrop {
+  animation: fadeShow 600ms ease-out;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+.user-detail span {
+  display: block;
+}
+
+.user-detail .user-detail-head {
+  margin-top: 0.8em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  font-size: 1.2rem;
+}
+
+
+.comment-detail {
+  max-width: 400px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 1em;
+}
+
+.comment-detail-head {
+  font-size: 1.1rem;
+}
+
+.comment-detail span{
+  display: block;
+  padding-bottom: 0.2em;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+@keyframes fadeShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
