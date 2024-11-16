@@ -1,11 +1,9 @@
-const postUserTemp = document.querySelector('[data-post-card]')
-const postsContainer = document.querySelector('[data-posts]')
-const userDetailTemp = document.querySelector('[data-user-detail]')
-const userCommentTemp = document.querySelector('[data-comment-detail]')
-const userDetailDialog = document.querySelector('[data-user-detail-dialog]')
-const commentDetailDialog = document.querySelector(
-  '[data-comment-detail-dialog]'
-)
+const postUserTemp = qs('[data-post-card]')
+const postsContainer = qs('[data-posts]')
+const userDetailTemp = qs('[data-user-detail]')
+const userCommentTemp = qs('[data-comment-detail]')
+const userDetailDialog = qs('[data-user-detail-dialog]')
+const commentDetailDialog = qs('[data-comment-detail-dialog]')
 
 const getData = () => {
   fetch('https://jsonplaceholder.typicode.com/posts')
@@ -29,26 +27,20 @@ const renderUserDetail = (data) => {
 
   const userDetailTemplate = document.importNode(userDetailTemp.content, true)
 
-  const fullName = userDetailTemplate.querySelector('[data-full-name]')
-  const username = userDetailTemplate.querySelector('[data-username]')
-  const userEmail = userDetailTemplate.querySelector('[data-user-email]')
-  const userStreet = userDetailTemplate.querySelector('[data-user-street]')
-  const userSuite = userDetailTemplate.querySelector('[data-user-suite]')
-  const userCity = userDetailTemplate.querySelector('[data-user-city]')
-  const userZipcode = userDetailTemplate.querySelector('[data-user-zipcode]')
-  const userLat = userDetailTemplate.querySelector('[data-user-lat]')
-  const userLng = userDetailTemplate.querySelector('[data-user-lng]')
-  const userPhone = userDetailTemplate.querySelector('[data-user-phone]')
-  const userWebsite = userDetailTemplate.querySelector('[data-user-website]')
-  const userCompanyName = userDetailTemplate.querySelector(
-    '[data-user-company-name]'
-  )
-  const userCompanyCatch = userDetailTemplate.querySelector(
-    '[data-user-company-catch]'
-  )
-  const userCompanyBs = userDetailTemplate.querySelector(
-    '[data-user-company-bs]'
-  )
+  const fullName = qs('[data-full-name]', userDetailTemplate)
+  const username = qs('[data-username]', userDetailTemplate)
+  const userEmail = qs('[data-user-email]', userDetailTemplate)
+  const userStreet = qs('[data-user-street]', userDetailTemplate)
+  const userSuite = qs('[data-user-suite]', userDetailTemplate)
+  const userCity = qs('[data-user-city]', userDetailTemplate)
+  const userZipcode = qs('[data-user-zipcode]', userDetailTemplate)
+  const userLat = qs('[data-user-lat]', userDetailTemplate)
+  const userLng = qs('[data-user-lng]', userDetailTemplate)
+  const userPhone = qs('[data-user-phone]', userDetailTemplate)
+  const userWebsite = qs('[data-user-website]', userDetailTemplate)
+  const userCompanyName = qs('[data-user-company-name]', userDetailTemplate)
+  const userCompanyCatch = qs('[data-user-company-catch]', userDetailTemplate)
+  const userCompanyBs = qs('[data-user-company-bs]', userDetailTemplate)
 
   fullName.innerHTML = `<strong>name:</strong> ${data.name}`
   username.innerHTML = `<strong>username:</strong> ${data.username}`
@@ -85,15 +77,9 @@ const renderCommentDetail = (datas) => {
       true
     )
 
-    const commentPostName = userCommentTemplate.querySelector(
-      '[data-comment-post-name]'
-    )
-    const commentEmail = userCommentTemplate.querySelector(
-      '[data-comment-email]'
-    )
-    const commentComment = userCommentTemplate.querySelector(
-      '[data-comment-comment]'
-    )
+    const commentPostName = qs('[data-comment-post-name]', userCommentTemplate)
+    const commentEmail = qs('[data-comment-email]', userCommentTemplate)
+    const commentComment = qs('[data-comment-comment]', userCommentTemplate)
 
     commentPostName.innerHTML = `<strong class="comment-detail-head">name:</strong> ${data.name}`
     commentEmail.innerHTML = `<strong class="comment-detail-head">sender email:</strong> ${data.email}`
@@ -115,10 +101,10 @@ const getComments = (id) => {
 const renderPosts = (datas) => {
   datas.forEach((data) => {
     const postUserTemplate = document.importNode(postUserTemp.content, true)
-    const postTitle = postUserTemplate.querySelector('h4')
-    const postDesc = postUserTemplate.querySelector('p')
-    const userIcon = postUserTemplate.querySelector('.user-placeholder')
-    const commentsIcon = postUserTemplate.querySelector('.post-comments')
+    const postTitle = qs('h4', postUserTemplate)
+    const postDesc = qs('p', postUserTemplate)
+    const userIcon = qs('.user-placeholder', postUserTemplate)
+    const commentsIcon = qs('.post-comments', postUserTemplate)
 
     userIcon.addEventListener('click', () => getUserDetail(data.userId))
     commentsIcon.addEventListener('click', () => getComments(data.id))
